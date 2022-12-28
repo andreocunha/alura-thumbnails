@@ -1,0 +1,42 @@
+.main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  weight: 100%;
+  background: linear-gradient(to bottom, #041834, #0A2E5B, #14437D);
+  gap: 2rem;
+}
+
+.areaDownload {
+  height: 640px;
+}
+
+.infoArea {
+  font-family: 'Roboto', sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1000px;
+  margin-bottom: 2rem;
+  
+  /* subir essa area no eixo X e Y*/
+  transform: translate(40px, -300px);
+}
+
+.title {
+  font-size: 3.5rem;
+  font-weight: 500;
+  color: #6BD1FF;
+  margin-bottom: 1rem;
+}
+
+.subTitle {
+  font-size: 2rem;
+  font-weight: 100;
+  color: #fff;
+  margin-bottom: 1rem;
+}

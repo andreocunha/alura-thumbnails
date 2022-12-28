@@ -1,0 +1,88 @@
+.formArea {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  width: 100%;
+  max-width: 1280px;
+  background: #fff;
+  border-radius: 5px;
+  padding: 1.5rem 2rem;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.formSubArea {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: flex-start;
+  width: 50%;
+  min-width: 300px;
+  height: 150px;
+  padding: 0 1rem;
+}
+
+.formSubArea label {
+  font-size: 1rem;
+  font-weight: 700;
+  font-family: "Roboto", sans-serif;
+  color: #000;
+}
+
+.formSubArea input {
+  width: 100%;
+  height: 2.5rem;
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 0.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: "Roboto", sans-serif;
+  color: #000;
+}
+
+.formSubArea input:focus {
+  outline: none;
+  border: 1px solid #6BD1FF;
+}
+
+.formSubArea select {
+  width: 100%;
+  height: 2.5rem;
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 0 0.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: "Roboto", sans-serif;
+  color: #000;
+}
+
+.formSubArea select:hover {
+  cursor: pointer;
+}
+
+.formSubArea select:focus {
+  outline: none;
+  border: 1px solid #6BD1FF;
+}
+
+.formSubArea button {
+  width: 100%;
+  height: 2.5rem;
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 0 0.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+  background: #136bd6;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.formSubArea button:hover {
+  filter: brightness(0.8);
+}

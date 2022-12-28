@@ -1,0 +1,120 @@
+.container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  weight: 100%;
+  background: linear-gradient(to bottom, #041834, #0A2E5B, #14437D);
+  gap: 2rem;
+}
+
+.thumbnailArea {
+  position: relative; 
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  width: 900px;
+  height: 500px;
+
+  background: linear-gradient(45deg, #03142b, #041834, #0A2E5B, #14437D);
+  
+  box-shadow: 0 0 15px 2px rgba(255, 255, 255, 0.3);
+}
+
+.aluraMaisIcon {
+  position: absolute;
+  right: 0px;
+  top: 20px;
+}
+
+.icon {
+  position: absolute;
+  left: 40px;
+  top: 40px;
+  padding: 10px;
+  box-shadow: 0 0 15px 2px rgba(115, 186, 181, 0.4);
+  cursor: pointer;
+}
+
+.person {
+  position: absolute;
+  right: 0px;
+  bottom: 0px;
+  cursor: pointer;
+  /* -webkit-filter: drop-shadow(0 0 15px rgba(155, 234, 250, 0.5)); */
+  /* convert */
+  filter: drop-shadow(0 0 15px rgba(155, 234, 250, 0.5));
+}
+
+.title {
+  color: #fff;
+  position: absolute;
+  bottom: 40px;
+  left: 40px;
+  max-width: 600px;
+  font-size: 3.2rem;
+  font-weight: 900;
+  text-shadow: 0 0 15px rgba(0, 0, 0, 0.8);
+  font-family: 'Roboto', sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  z-index: 1;
+
+  word-wrap: break-word;      /* IE 5.5-7 */
+  white-space: -moz-pre-wrap; /* Firefox 1.0-2.0 */
+  white-space: pre-wrap;      /* current browsers */
+}
+
+.formArea {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-end;
+  gap: 1rem;
+  padding: 1rem;
+  width: 100%;
+  max-width: 900px;
+  height: 150px;
+  border-radius: 10px;
+
+  background: linear-gradient(45deg, #03142b, #041834, #0A2E5B, #14437D);
+  
+  box-shadow: 0 0 15px 2px rgba(255, 255, 255, 0.3);
+}
+
+.formArea textarea {
+  width: 50%;
+  height: 120px;
+  border: none;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 1.2rem;
+  font-family: 'Roboto', sans-serif;
+  color: #000;
+  resize: none;
+}
+
+.formArea button {
+  width: 300px;
+  height: 2.5rem;
+  border: 1px solid gray;
+  border-radius: 5px;
+  padding: 0 0.5rem;
+  font-size: 1rem;
+  font-weight: 400;
+  font-family: "Roboto", sans-serif;
+  color: #fff;
+  background: #136bd6;
+  border: none;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.formArea button:hover {
+  filter: brightness(0.8);
+}
