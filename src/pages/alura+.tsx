@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import Image from 'next/image'
 import { useState } from 'react';
 import styles from '../styles/AluraMais.module.css'
@@ -27,6 +28,12 @@ export default function AluraMais() {
 
   return (
     <div className={styles.container}>
+      <Head>
+        <title>Thumbnail Alura+</title>
+        <meta name="description" content="Gerar Thumbnails para Alura+" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
       <div className={styles.thumbnailArea} id="thumbnail-alura-mais">
         <Image src="/icons/alura-mais.png" alt="Alura+" width={100} height={60} className={styles.aluraMaisIcon} />
         <Image src={imageIcon} alt="React" width={150} height={150} className={styles.icon} 

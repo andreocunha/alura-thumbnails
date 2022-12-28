@@ -12,6 +12,9 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
+      <div className={styles.logoArea} >
+        <Image src="/alura-logo.svg" alt="Logo Alura" width={120} height={60} />
+      </div>
       <main className={styles.main}>
         <h1>Escolha um tipo de Thumbnail</h1>
         <div className={styles.center}>
@@ -38,6 +41,15 @@ export default function Home() {
             </div>
           </Link>
         </div>
+        <footer className={styles.footer}>
+          <a
+            href="https://github.com/andreocunha/alura-thumbnails"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            Feito por André Cunha
+          </a>
+        </footer>
       </main>
     </>
   )
