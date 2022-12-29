@@ -13,7 +13,9 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className={styles.logoArea} >
-        <Image src="/alura-logo.svg" alt="Logo Alura" width={120} height={60} />
+        <a href="https://alura.com.br" target="_blank" rel="noopener noreferrer">
+          <Image src="/alura-logo.svg" alt="Logo Alura" width={120} height={60} />
+        </a>
       </div>
       <main className={styles.main}>
         <h1>Escolha um tipo de Thumbnail</h1>

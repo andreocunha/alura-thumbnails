@@ -40,7 +40,13 @@ export function FormsCursos({ title, setTitle, subTitle, setSubTitle, escola, se
           ))}
         </select>
         <br />
-        <button onClick={() => handleDownload(escola?.nome, '#thumbnail-curso')}>Download Imagem</button>
+        <button 
+          onClick={() => 
+            handleDownload(`${escola?.nome}-${title}`, '#thumbnail-curso')
+          }
+        >
+          Download Imagem
+        </button>
       </div>
     </div>
   )
