@@ -4,6 +4,10 @@ Projeto inspirado no gerador de Thumbnail para o Github do [Eduardo Tioma](https
 
 Site: [https://alurathumbnail.vercel.app/](https://alurathumbnail.vercel.app/)
 
+<div align="center">
+  <img alt="Demonstracao" title="Demonstracao" src=".github/demo.gif" max-height="300px" />
+</div>
+
 Para instalar as dependências do projeto, execute o comando abaixo:
 
 ```bash
