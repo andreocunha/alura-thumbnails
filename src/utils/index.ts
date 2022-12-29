@@ -16,9 +16,12 @@ export async function handleDownload(title: string, id: string){
         link.download = `${title}.png`;
         link.href = dataUrl;
         link.click();
+        // reload page to remove cache
+        window.location.reload();
       })
       .catch((err) => {
         console.log(err);
+        alert('Erro ao baixar imagem');
       })
     return
   }
