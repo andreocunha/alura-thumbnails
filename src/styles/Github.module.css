@@ -11,6 +11,7 @@
 
 .areaDownload {
   height: 500px;
+  position: relative;
 }
 
 .infoArea {
@@ -21,9 +22,13 @@
   align-items: flex-start;
   width: 100%;
   max-width: 800px;
+  padding: 0;
+  margin: 0;
   
-  /* subir essa area no eixo X e Y*/
-  transform: translate(40px, -250px);
+  position: absolute;
+  bottom: 80px;
+  left: 40px;
+  
 }
 
 .title {
@@ -38,8 +43,7 @@
 }
 
 .subTitle {
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   font-weight: 100;
   color: #fff;
-  margin-bottom: 1rem;
 }
