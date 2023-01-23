@@ -1,4 +1,5 @@
 .formArea {
+  position: relative;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -8,8 +9,17 @@
   max-width: 1000px;
   background: #fff;
   border-radius: 5px;
-  padding: 1.5rem 2rem;
+  padding: 2rem;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.formArea a {
+  color: #136bd6;
+  text-decoration: underline;
+  transition: 0.2s;
+  position: absolute;
+  bottom: 0.5rem;
+  right: 3rem;
 }
 
 .formSubArea {
