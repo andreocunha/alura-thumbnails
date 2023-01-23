@@ -32,7 +32,7 @@ export default function Readme() {
         height={600}
         enableScroll={false}
         style={{
-          width: '80%',
+          width: '100%',
         }}
       />
       <button className={styles.downloadButton} onClick={downloadReadme}>Download</button>
