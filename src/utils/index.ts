@@ -7,8 +7,9 @@ import { toPng } from 'html-to-image';
 export async function handleDownload(title: string, id: string){
   if (!document || !id) return;
 
-  if(id == '#thumbnail-alura-mais'){
-    const node = document?.getElementById('thumbnail-alura-mais')!;
+    // remove the # from the id
+    const idElement = id.replace('#', '');
+    const node = document?.getElementById(idElement)!;
 
     await toPng(node, { cacheBust: true, })
       .then((dataUrl) => {
@@ -24,9 +25,8 @@ export async function handleDownload(title: string, id: string){
         alert('Erro ao baixar imagem');
       })
     return
-  }
 
-  html2canvas(document?.querySelector(id)!).then(canvas => {
-    saveAs(canvas.toDataURL(), `${title}.png`);
-  });
+  // html2canvas(document?.querySelector(id)!).then(canvas => {
+  //   saveAs(canvas.toDataURL(), `${title}.png`);
+  // });
 };
