@@ -36,6 +36,7 @@
   font-weight: 500;
   color: #6BD1FF;
   margin-bottom: 1rem;
+  width: 100%;
 
   word-wrap: break-word;      /* IE 5.5-7 */
   white-space: -moz-pre-wrap; /* Firefox 1.0-2.0 */
@@ -46,4 +47,5 @@
   font-size: 1.8rem;
   font-weight: 100;
   color: #fff;
+  width: 100%;
 }

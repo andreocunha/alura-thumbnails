@@ -48,7 +48,8 @@ export function FormsCursos({ title, setTitle, subTitle, setSubTitle, escola, se
           Download Imagem
         </button>
       </div>
-      <a href="/readme" target="_blank" rel="noreferrer">Fazer o README online</a>
+      {/* <a href="/readme" target="_blank" rel="noreferrer">Fazer o README online</a> */}
+      <a href={`/readme?title=${title}&subtitle=${subTitle}&escola=${escola?.nome}`} target="_blank" rel="noreferrer">Fazer o README online</a>
     </div>
   )
 
