@@ -16,7 +16,7 @@ const MDEditor = dynamic(
 );
 
 export default function Readme() {
-  const [value, setValue] = useState<string | undefined>();
+  const [value, setValue] = useState<string | undefined>('');
 
   async function downloadReadme() {
     const file = new Blob([value!], {type: 'text/plain;charset=utf-8'});
@@ -30,32 +30,35 @@ export default function Readme() {
     const urlParams = new URLSearchParams(window.location.search);
     const title = urlParams.get('title');
     const subtitle = urlParams.get('subtitle');
-    const escola = urlParams.get('escola');
+    const escola = urlParams.get('escola');    
+
 
     // when user connect to socket
-    socket.on('connect', () => {
-      console.log('connected to socket')
-      // verify if the query params are not null
-      if (!title && !subtitle && !escola) return;
+    // verify if the query params are not null
+    if (!title && !subtitle && !escola) return;
 
-      const promptText = `
-      Faça um readme seguindo o exemplo, mas para o conteúdo 
-      """
-      titulo: ${title}
-      subtitulo: ${subtitle}
-      escola: ${escola}
-      """
-      Sempre mostre no começo do readme: ![Descricao da sua imagem](https://raw.githubusercontent.com/andreocunha/upload_files_test/main/exemplo-thumb.png)
+    const promptText = `
+    Faça um readme seguindo o exemplo, mas para o conteúdo 
+    """
+    titulo: ${title}
+    subtitulo: ${subtitle}
+    escola: ${escola}
+    """
+    Sempre mostre no começo do readme: ![Descricao da sua imagem](https://raw.githubusercontent.com/andreocunha/upload_files_test/main/exemplo-thumb.png)
 
-      Exemplo:
-      ${exampleReadme}
-      `
-      socket.emit('readme', promptText);
-    })
+    Exemplo:
+    ${exampleReadme}
+    `
+    socket.emit('readme', promptText);
+
     
     socket.on('response', async (response: string) => {
-      const markdown = await AgentMarkdown.produce(response);
-      setValue(markdown);
+      // const markdown = await AgentMarkdown.produce(response);
+      // concat with the last value
+      // if not undefined or '[DONE]'
+      if (response && response !== '[DONE]') {
+        setValue((prev) => prev + response)
+      }
     })
 
     socket.on('wait', (result) => {
