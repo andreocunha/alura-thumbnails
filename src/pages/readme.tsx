@@ -4,10 +4,7 @@ import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
 import styles from '../styles/Readme.module.css'
 import FileSaver from 'file-saver';
-import { socket } from "../services/socketio";
-import { AgentMarkdown } from "agentmarkdown"
-
-import { exampleReadme } from "../mocks/readme";
+import { comecoReadme, fimReadme, templateReadme } from "../mocks/readme";
 import Swal from "sweetalert2";
 
 const MDEditor = dynamic(
@@ -16,11 +13,64 @@ const MDEditor = dynamic(
 );
 
 export default function Readme() {
+  const [temporaryValue, setTemporaryValue] = useState<string>('');
   const [value, setValue] = useState<string | undefined>('');
 
   async function downloadReadme() {
-    const file = new Blob([value!], {type: 'text/plain;charset=utf-8'});
+    const file = new Blob([value!], { type: 'text/plain;charset=utf-8' });
     FileSaver.saveAs(file, 'README.md');
+  }
+
+  async function makeReadmeAI(title: string, subtitle: string, escola: string) {
+    // use sweetalert to get textarea value
+    const { value: detalhes } = await Swal.fire({
+      input: 'textarea',
+      inputLabel: 'Detalhes do curso',
+      inputPlaceholder: 'Digite os detalhes do curso',
+      inputAttributes: {
+        'aria-label': 'Digite os detalhes do curso',
+        'maxlength': '1000'
+      },
+      showCancelButton: true
+    })
+
+    if (detalhes) {
+      setTemporaryValue(comecoReadme)
+
+    const prompt = `
+Siga exatamente o template abaixo para criar o readme com base nas informações abaixo:
+titulo: ${title}
+subtitulo: ${subtitle}
+escola: ${escola}
+detalhes: ${detalhes}
+
+Template:
+${templateReadme}
+`
+
+    fetch("https://api.openai.com/v1/chat/completions", {
+      body: JSON.stringify({
+        model: "gpt-3.5-turbo",
+        messages: [
+          {
+            "role": "user",
+            "content": prompt
+          }
+        ]
+      }),
+      headers: {
+        Authorization: `Bearer ${process.env.NEXT_PUBLIC_OPENAI_API_KEY}`,
+        "Content-Type": "application/json"
+      },
+      method: "POST"
+    })
+      .then(response => response.json())
+      .then(data => {
+        const result = data?.choices[0]?.message?.content || '';
+        console.log(result);
+        setTemporaryValue(result + fimReadme);
+      });
+    }
   }
 
   useEffect(() => {
@@ -30,56 +80,33 @@ export default function Readme() {
     const urlParams = new URLSearchParams(window.location.search);
     const title = urlParams.get('title');
     const subtitle = urlParams.get('subtitle');
-    const escola = urlParams.get('escola');    
-
-
-    // when user connect to socket
-    // verify if the query params are not null
-    if (!title && !subtitle && !escola) return;
-
-    const promptText = `
-    Faça um readme seguindo o exemplo, mas para o conteúdo 
-    """
-    titulo: ${title}
-    subtitulo: ${subtitle}
-    escola: ${escola}
-    """
-    Sempre mostre no começo do readme: ![Descricao da sua imagem](https://raw.githubusercontent.com/andreocunha/upload_files_test/main/exemplo-thumb.png)
-
-    Exemplo:
-    ${exampleReadme}
-    `
-    socket.emit('readme', promptText);
-
-    
-    socket.on('response', async (response: string) => {
-      // const markdown = await AgentMarkdown.produce(response);
-      // concat with the last value
-      // if not undefined or '[DONE]'
-      if (response && response !== '[DONE]') {
-        setValue((prev) => prev + response)
-      }
-    })
-
-    socket.on('wait', (result) => {
-      const Toast = Swal.mixin({
-        toast: true,
-        position: 'top-end',
-        showConfirmButton: true,
-      })
-      
-      Toast.fire({
-        icon: 'info',
-        title: result
-      })
-    })
+    const escola = urlParams.get('escola');
+    if (title && subtitle && escola) {
+      makeReadmeAI(title, subtitle, escola);
+    }
   }, [])
+
+  useEffect(() => {
+    if (temporaryValue) {
+      // add letter by letter
+      let i = 0;
+      let valueToSet = value;
+      const interval = setInterval(() => {
+        valueToSet = valueToSet + temporaryValue[i];
+        setValue(valueToSet);
+        i++;
+        if (i === temporaryValue.length - 1) {
+          clearInterval(interval);
+        }
+      }, 10);
+    }
+  }, [temporaryValue])
 
   return (
     <div className={styles.container} data-color-mode="dark">
-      <MDEditor 
-        value={value} 
-        onChange={setValue} 
+      <MDEditor
+        value={value}
+        onChange={setValue}
         height={600}
         enableScroll={false}
         style={{

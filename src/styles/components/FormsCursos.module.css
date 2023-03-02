@@ -17,9 +17,6 @@
   color: #136bd6;
   text-decoration: underline;
   transition: 0.2s;
-  position: absolute;
-  bottom: 0.5rem;
-  right: 3rem;
 }
 
 .formSubArea {
@@ -95,4 +92,14 @@
 
 .formSubArea button:hover {
   filter: brightness(0.8);
+}
+
+.links {
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  flex-direction: row;
+  gap: 5px;
+  padding-right: 1.2rem;
+  margin-top: 0.3rem;
 }
