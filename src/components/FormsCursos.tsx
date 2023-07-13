@@ -7,7 +7,8 @@ interface Escola {
   id: number;
   nome: string;
   imagem: string;
-  color: string;
+  colorTitle: string;
+  colorSubtitle?: string;
 }
 
 interface FormCursosProps {
@@ -50,9 +51,9 @@ export function FormsCursos({ title, setTitle, subTitle, setSubTitle, escola, se
       </div>
       {/* <a href="/readme" target="_blank" rel="noreferrer">Fazer o README online</a> */}
       <div className={styles.links}>
-        <a href={`/readme`} target="_blank" rel="noreferrer">Fazer o README do zero</a>
-        ou
-        <a href={`/readme?title=${title}&subtitle=${subTitle}&escola=${escola?.nome}`} target="_blank" rel="noreferrer">Fazer o README com IA</a>
+        <a href={`/readme`} target="_blank" rel="noreferrer">Fazer o README</a>
+        {/* ou
+        <a href={`/readme?title=${title}&subtitle=${subTitle}&escola=${escola?.nome}`} target="_blank" rel="noreferrer">Fazer o README com IA</a> */}
       </div>
     </div>
   )

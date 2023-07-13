@@ -22,8 +22,8 @@ export default function Github() {
         <div id="thumbnail-curso" className={styles.areaDownload}>
           <Image src={escola?.imagem} alt={escola?.nome} width={1000} height={500} />
           <div className={styles.infoArea}>
-            <h1 style={{ color: escola?.color }} className={styles.title}>{title}</h1>
-            <p className={styles.subTitle}>{subTitle}</p>
+            <h1 style={{ color: escola?.colorTitle }} className={styles.title}>{title}</h1>
+            <p style={escola?.colorSubtitle ? { color: escola?.colorSubtitle } : {}} className={styles.subTitle}>{subTitle}</p>
           </div>
         </div>
 

@@ -3,42 +3,49 @@ export const escolas = [
     id: 1,
     nome: 'Mobile',
     imagem: '/templates/mobile.png',
-    color: '#FDCD09'
+    colorTitle: '#FDCD09'
   },
   {
     id: 2,
     nome: 'Front-end',
     imagem: '/templates/front-end.png',
-    color: '#6BD1FF'
+    colorTitle: '#6BD1FF'
   },
   {
     id: 3,
     nome: 'Programação',
     imagem: '/templates/programacao.png',
-    color: '#3BDD98'
+    colorTitle: '#3BDD98'
   },
   {
     id: 4,
     nome: 'UX Design',
     imagem: '/templates/ux-design.png',
-    color: '#DB65D1'
+    colorTitle: '#DB65D1'
   },
   {
     id: 5,
     nome: 'DevOps',
     imagem: '/templates/dev-ops.png',
-    color: '#F97594'
+    colorTitle: '#F97594'
   },
   {
     id: 6,
     nome: 'Inovação e gestão',
     imagem: '/templates/inovacao-gestao.png',
-    color: '#FBAB45'
+    colorTitle: '#FBAB45'
   },
   {
     id: 7,
     nome: 'Data Science',
     imagem: '/templates/data-science.png',
-    color: '#D2E665'
-  }
+    colorTitle: '#D2E665'
+  },
+  {
+    id: 8,
+    nome: 'Alura Start',
+    imagem: '/templates/alura-start.png',
+    colorTitle: '#f6543b',
+    colorSubtitle: '#424242'
+  },
 ]
