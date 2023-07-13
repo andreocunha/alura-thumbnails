@@ -18,7 +18,9 @@ export async function handleDownload(title: string, id: string){
         link.href = dataUrl;
         link.click();
         // reload page to remove cache
-        window.location.reload();
+        if(id == '#thumbnail-alura-mais'){
+          window.location.reload();
+        }
       })
       .catch((err) => {
         console.log(err);
