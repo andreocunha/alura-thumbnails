@@ -27,7 +27,7 @@ export function FormsGrupoEstudos({ title, setTitle, host, setHost, date, setDat
     <div className={styles.formArea}>
       <div className={styles.formSubArea}>
         <label htmlFor="title">Título</label>
-        <input type="text" placeholder="Título" value={title} onChange={(e) => setTitle(e.target.value)} maxLength={50}/>
+        <input type="text" placeholder="Título" value={title} onChange={(e) => setTitle(e.target.value)} maxLength={55}/>
 
         <label htmlFor="subTitle">Host</label>
         <input type="text" placeholder="Host" value={host} onChange={(e) => setHost(e.target.value)} maxLength={30} />
