@@ -32,3 +32,20 @@ export async function handleDownload(title: string, id: string){
   //   saveAs(canvas.toDataURL(), `${title}.png`);
   // });
 };
+
+export const chooseFileFromComputer = (setImage: any) => {
+  const input = document.createElement('input');
+  input.type = 'file';
+  input.accept = 'image/*';
+  input.onchange = (event) => handleUploadImage(event, setImage);
+  input.click();
+}
+
+function handleUploadImage(event: any, setImage: any) {
+  const file = event.target.files[0];
+  const reader = new FileReader();
+  reader.onloadend = () => {
+    setImage(reader.result);
+  }
+  reader.readAsDataURL(file);
+}

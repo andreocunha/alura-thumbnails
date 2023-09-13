@@ -42,6 +42,17 @@ export default function Home() {
               />
             </div>
           </Link>
+          <Link href="/grupo-estudo">
+            <div className={styles.icon}>
+              <Image
+                src="/icons/study-group.png"
+                alt="13"
+                width={40}
+                height={40}
+                priority
+              />
+            </div>
+          </Link>
         </div>
         <footer className={styles.footer}>
           <a

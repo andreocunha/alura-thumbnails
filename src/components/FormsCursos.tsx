@@ -1,5 +1,5 @@
 import React from "react";
-import { escolas } from "../mocks/escolas";
+import { escolas } from "../data/escolas";
 import styles from '../styles/components/FormsCursos.module.css';
 import { handleDownload } from "../utils";
 

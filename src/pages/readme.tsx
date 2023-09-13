@@ -4,7 +4,7 @@ import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
 import styles from '../styles/Readme.module.css'
 import FileSaver from 'file-saver';
-import { comecoReadme, fimReadme, templateReadme } from "../mocks/readme";
+import { comecoReadme, fimReadme, templateReadme } from "../data/readme";
 import Swal from "sweetalert2";
 
 const MDEditor = dynamic(

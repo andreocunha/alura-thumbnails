@@ -2,7 +2,7 @@ import Head from 'next/head'
 import styles from '../styles/Github.module.css'
 import Image from 'next/image';
 import { useState } from 'react';
-import { escolas } from '../mocks/escolas';
+import { escolas } from '../data/escolas';
 import { FormsCursos } from '../components/FormsCursos';
 
 export default function Github() {
@@ -20,7 +20,7 @@ export default function Github() {
       </Head>
       <main className={styles.main}>
         <div id="thumbnail-curso" className={styles.areaDownload}>
-          <Image src={escola?.imagem} alt={escola?.nome} width={1000} height={500} />
+          <img src={"/templates/github/"+escola?.imagem} alt={escola?.nome} width={1000} height={500} />
           <div className={styles.infoArea}>
             <h1 style={{ color: escola?.colorTitle }} className={styles.title}>{title}</h1>
             <p style={escola?.colorSubtitle ? { color: escola?.colorSubtitle } : {}} className={styles.subTitle}>{subTitle}</p>
