@@ -6,6 +6,7 @@
   min-height: 100vh;
   weight: 100%;
   gap: 2rem;
+  padding: 1rem;
   background: linear-gradient(to bottom, #041834, #0A2E5B, #14437D);
 }
 
@@ -29,16 +30,6 @@
   flex-direction: column;
   justify-content: flex-end;
   align-items: flex-start;
-  width: 100%;
-  max-width: 800px;
-  height: 100%;
-  margin: 0;
-  padding-left: 11.5rem;
-  padding-bottom: 3.8rem;
-  
-  position: absolute;
-  bottom: 0px;
-  left: 0px;
 }
 
 .title {
@@ -48,8 +39,9 @@
   color: #6BD1FF;
   position: absolute;
   top: 8.5rem;
+  left: 11.5rem;
   width: 100%;
-  max-width: 400px;
+  max-width: 430px;
 
   word-wrap: break-word;      /* IE 5.5-7 */
   white-space: -moz-pre-wrap; /* Firefox 1.0-2.0 */
@@ -63,8 +55,8 @@
   color: #D7F9FF;
   width: 100%;
   position: absolute;
-  margin-bottom: 2.6rem;
-  margin-left: 5.5rem;
+  bottom: 6.4rem;
+  left: 17rem;
   filter: brightness(0.8);
 }
 
@@ -75,8 +67,8 @@
   color: #D7F9FF;
   width: 100%;
   position: absolute;
-  margin-bottom: 0.6rem;
-  margin-left: 5.5rem;
+  bottom: 4.4rem;
+  left: 17rem;
   filter: brightness(0.8);
 }
 

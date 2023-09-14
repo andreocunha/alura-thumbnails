@@ -10,6 +10,12 @@ interface Escola {
   colorSubtitle?: string;
 }
 
+interface TypeProps {
+  id: number;
+  nome: string;
+  folder: string;
+}
+
 interface FormsGrupoEstudosProps {
   title: string;
   setTitle: (title: string) => void;
@@ -20,9 +26,12 @@ interface FormsGrupoEstudosProps {
   escola: Escola;
   setEscola: (escola: Escola) => void;
   escolas: Escola[];
+  types: TypeProps[];
+  selectedType: number;
+  setSelectedType: (id: number) => void;
 }
 
-export function FormsGrupoEstudos({ title, setTitle, host, setHost, date, setDate, escola, setEscola, escolas }: FormsGrupoEstudosProps) {
+export function FormsGrupoEstudos({ title, setTitle, host, setHost, date, setDate, escola, setEscola, escolas, types, selectedType, setSelectedType }: FormsGrupoEstudosProps) {
   return (
     <div className={styles.formArea}>
       <div className={styles.formSubArea}>
@@ -47,11 +56,11 @@ export function FormsGrupoEstudos({ title, setTitle, host, setHost, date, setDat
         </select>
         <label htmlFor="tipo">Tipo</label>
         <select 
-          value={"Discord"} 
-          onChange={(e) => {}}
+          value={selectedType} 
+          onChange={(e) => {setSelectedType(Number(e.target.value))}}
         >
-          {["Discord"].map((escola) => (
-            <option key={"Discord"} value={"Discord"}>{"Discord"}</option>
+          {types.map((type) => (
+            <option key={type.nome} value={type.id}>{type.nome}</option>
           ))}
         </select>
         <br />

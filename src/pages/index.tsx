@@ -42,7 +42,7 @@ export default function Home() {
               />
             </div>
           </Link>
-          <Link href="/grupo-estudo">
+          <Link href="/grupo-estudos">
             <div className={styles.icon}>
               <Image
                 src="/icons/study-group.png"
