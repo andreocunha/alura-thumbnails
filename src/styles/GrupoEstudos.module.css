@@ -41,7 +41,7 @@
   top: 8.5rem;
   left: 11.5rem;
   width: 100%;
-  max-width: 430px;
+  max-width: 400px;
 
   word-wrap: break-word;      /* IE 5.5-7 */
   white-space: -moz-pre-wrap; /* Firefox 1.0-2.0 */
@@ -73,8 +73,12 @@
 }
 
 .person {
+  background: #d9d9d9;
   width: 233px;
   height: 233px;
+  border-width: 3px;
+  border-style: solid;
+  border-color: #FFBA05;
   position: absolute;
   bottom: 75px;
   right: 112px;

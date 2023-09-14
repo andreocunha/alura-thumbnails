@@ -65,6 +65,7 @@ export default function StudyGroup() {
           fontSize: '1.7rem',
           top: '10.5rem',
           left: '2rem',
+          maxWidth: '430px',
         },
         subTitle1: {
           fontSize: '1rem',
@@ -97,6 +98,7 @@ export default function StudyGroup() {
           fontSize: '0.95rem',
           top: '10rem',
           left: '1.5rem',
+          maxWidth: '230px',
         },
         subTitle1: {
           fontSize: '0.8rem',
@@ -162,7 +164,7 @@ export default function StudyGroup() {
             width={450} 
             height={450} 
             className={styles.person} 
-            style={types[selectedType].styles.person}
+            style={{...types[selectedType].styles.person, borderColor: escola?.colorTitle}}
             onClick={() => chooseFileFromComputer(setImagePerson)}
           />
         </div>
