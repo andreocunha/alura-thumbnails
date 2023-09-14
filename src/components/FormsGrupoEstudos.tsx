@@ -29,9 +29,10 @@ interface FormsGrupoEstudosProps {
   types: TypeProps[];
   selectedType: number;
   setSelectedType: (id: number) => void;
+  onChange?: () => void;
 }
 
-export function FormsGrupoEstudos({ title, setTitle, host, setHost, date, setDate, escola, setEscola, escolas, types, selectedType, setSelectedType }: FormsGrupoEstudosProps) {
+export function FormsGrupoEstudos({ title, setTitle, host, setHost, date, setDate, escola, setEscola, escolas, types, selectedType, setSelectedType, onChange }: FormsGrupoEstudosProps) {
   return (
     <div className={styles.formArea}>
       <div className={styles.formSubArea}>
@@ -57,7 +58,7 @@ export function FormsGrupoEstudos({ title, setTitle, host, setHost, date, setDat
         <label htmlFor="tipo">Tipo</label>
         <select 
           value={selectedType} 
-          onChange={(e) => {setSelectedType(Number(e.target.value))}}
+          onChange={(e) => {setSelectedType(Number(e.target.value)); onChange && onChange()}}
         >
           {types.map((type) => (
             <option key={type.nome} value={type.id}>{type.nome}</option>

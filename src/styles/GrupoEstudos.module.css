@@ -85,3 +85,9 @@
   border-bottom-right-radius: 8px;
   cursor: pointer;
 }
+
+.placeholder {
+  color: #FFFFFF;
+  font-size: 2rem;
+  margin: 3rem;
+}

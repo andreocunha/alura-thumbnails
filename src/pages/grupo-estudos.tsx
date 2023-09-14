@@ -127,6 +127,7 @@ export default function StudyGroup() {
   const [host, setHost] = useState('André Cunha');
   const [date, setDate] = useState('09/09/2023');
   const [imagePerson, setImagePerson] = useState('/icons/add-photo.png');
+  const [isImageLoaded, setIsImageLoaded] = useState(true);
 
   return (
     <>
@@ -137,8 +138,20 @@ export default function StudyGroup() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className={styles.main}>
-        <div id="thumbnail-curso" className={styles.areaDownload} style={types[selectedType].styles.areaDownload}>
-          <img src={`/templates/${types[selectedType].folder}/${escola?.imagem}`} alt={escola?.nome} className={styles.imageMain}/>
+        {!isImageLoaded && <div className={styles.placeholder}>Carregando...</div>}
+        <div 
+          id="thumbnail-curso" 
+          className={styles.areaDownload} 
+          style={isImageLoaded ? {...types[selectedType].styles.areaDownload} : { display: 'none' }}
+        >
+          <img 
+            src={`/templates/${types[selectedType].folder}/${escola?.imagem}`} 
+            alt={escola?.nome} 
+            className={styles.imageMain}
+            onLoad={() => setTimeout(() => setIsImageLoaded(true), 500)}
+            style={isImageLoaded ? {} : { display: 'none' }}
+          />
+
           <div className={styles.infoArea}>
             <h1 
               style={{ 
@@ -182,6 +195,7 @@ export default function StudyGroup() {
           types={types}
           selectedType={selectedType}
           setSelectedType={setSelectedType}
+          onChange={() => setIsImageLoaded(false)}
         />
       </main>
     </>
