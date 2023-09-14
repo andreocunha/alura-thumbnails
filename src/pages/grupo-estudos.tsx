@@ -16,7 +16,7 @@ export default function StudyGroup() {
     {
       id: 2,
       nome: 'Front-end',
-      imagem: 'front.png',
+      imagem: 'front-end.png',
       colorTitle: '#6BD1FF'
     },
   ]
