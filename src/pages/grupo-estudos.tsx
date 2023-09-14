@@ -1,6 +1,6 @@
 import Head from 'next/head'
 import styles from '../styles/GrupoEstudos.module.css'
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 // import { escolas } from '../data/escolas';
 import { FormsGrupoEstudos } from '../components/FormsGrupoEstudos';
 import { chooseFileFromComputer } from '../utils';
@@ -127,7 +127,11 @@ export default function StudyGroup() {
   const [host, setHost] = useState('André Cunha');
   const [date, setDate] = useState('09/09/2023');
   const [imagePerson, setImagePerson] = useState('/icons/add-photo.png');
-  const [isImageLoaded, setIsImageLoaded] = useState(true);
+  const [isImageLoaded, setIsImageLoaded] = useState(false);
+
+  useEffect(() => {
+    setTimeout(() => setIsImageLoaded(true), 1000);
+  }, [])
 
   return (
     <>
