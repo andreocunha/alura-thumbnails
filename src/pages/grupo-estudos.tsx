@@ -38,18 +38,22 @@ export default function StudyGroup() {
         subTitle1: {
           fontSize: '1.2rem',
           bottom: '6.4rem',
-          left: '17rem',
+          left: '11.5rem',
         },
         subTitle2: {
           fontSize: '1.2rem',
           bottom: '4.4rem',
-          left: '17rem',
+          left: '11.5rem',
         },
         person: {
           width: '233px',
           height: '233px',
           bottom: '75px',
           right: '112px',
+        },
+        icons: {
+          height: '15px',
+          marginRight: '8px',
         }
       }
     },
@@ -70,12 +74,12 @@ export default function StudyGroup() {
         subTitle1: {
           fontSize: '1rem',
           bottom: '12.4rem',
-          left: '6rem',
+          left: '2rem',
         },
         subTitle2: {
           fontSize: '1rem',
           bottom: '10.9rem',
-          left: '6rem',
+          left: '2rem',
         },
         person: {
           width: '146px',
@@ -83,6 +87,10 @@ export default function StudyGroup() {
           bottom: '75px',
           right: '57px',
           borderBottomRightRadius: '18px',
+        },
+        icons: {
+          height: '12px',
+          marginRight: '6px',
         }
       }
     },
@@ -103,12 +111,12 @@ export default function StudyGroup() {
         subTitle1: {
           fontSize: '0.8rem',
           bottom: '16.2rem',
-          left: '4.8rem',
+          left: '1.5rem',
         },
         subTitle2: {
           fontSize: '0.8rem',
           bottom: '14.85rem',
-          left: '4.8rem',
+          left: '1.5rem',
         },
         person: {
           width: '154.5px',
@@ -116,6 +124,10 @@ export default function StudyGroup() {
           bottom: '66px',
           right: '63.5px',
           borderBottomRightRadius: '10px',
+        },
+        icons: {
+          height: '10px',
+          marginRight: '4px',
         }
       }
     }
@@ -124,8 +136,8 @@ export default function StudyGroup() {
   const [escola, setEscola] = useState(escolas[0]);
   const [selectedType, setSelectedType] = useState(types[0].id);
   const [title, setTitle] = useState('Título em até 45 caracteres para preencher duas linhas');
-  const [host, setHost] = useState('André Cunha');
-  const [date, setDate] = useState('09/09/2023');
+  const [host, setHost] = useState('André Oliveira Cunha');
+  const [date, setDate] = useState('09/09/2023 - 15:00');
   const [imagePerson, setImagePerson] = useState('/icons/add-photo.png');
   const [isImageLoaded, setIsImageLoaded] = useState(false);
 
@@ -168,11 +180,25 @@ export default function StudyGroup() {
             <p 
               className={styles.subTitle1}
               style={types[selectedType].styles.subTitle1}
-            >{host}</p>
+            >
+              <img
+                src='/icons/person.svg'
+                alt='Ícone de pessoa'
+                style={types[selectedType].styles.icons}
+              />
+              Host: {host}
+            </p>
             <p 
               className={styles.subTitle2}
               style={types[selectedType].styles.subTitle2}
-            >{date}</p>
+            >
+              <img
+                src='/icons/calendar.svg'
+                alt='Ícone de calendário'
+                style={types[selectedType].styles.icons}
+              />
+              Data: {date}
+            </p>
           </div>
 
           <img 
