@@ -34,9 +34,9 @@ export default function Home() {
           <Link href="/alura+">
             <div className={styles.icon}>
               <Image
-                src="/icons/alura-mais.png"
+                src="/icons/alura-plus.png"
                 alt="13"
-                width={70}
+                width={44}
                 height={40}
                 priority
               />

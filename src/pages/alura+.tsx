@@ -35,7 +35,7 @@ export default function AluraMais() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <div className={styles.thumbnailArea} id="thumbnail-alura-mais">
-        <Image src="/icons/alura-mais.png" alt="Alura+" width={100} height={60} className={styles.aluraMaisIcon} />
+        <Image src="/icons/alura-plus.png" alt="Alura+" width={70} height={60} className={styles.aluraMaisIcon} />
         <Image src={imageIcon} alt="React" width={150} height={150} className={styles.icon} 
           onClick={() => chooseFileFromComputer(setImageIcon)}
         />
