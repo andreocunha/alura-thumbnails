@@ -34,14 +34,14 @@
 
 .title {
   font-size: 1.8rem;
-  font-weight: 500;
-  font-family: 'Chakra Petch', sans-serif;
+  font-weight: 700;
   color: #FFFFFF;
   position: absolute;
   top: 8.5rem;
   left: 11.5rem;
   width: 100%;
-  max-width: 400px;
+  max-width: 600px;
+  text-align: left;
 
   word-wrap: break-word;      /* IE 5.5-7 */
   white-space: -moz-pre-wrap; /* Firefox 1.0-2.0 */
@@ -50,40 +50,23 @@
 
 .subTitle1 {
   font-size: 1.2rem;
-  font-weight: 400;
-  font-family: 'Inter', sans-serif;
-  color: #D7F9FF;
+  color: #e0e0e0;
   width: 100%;
+  max-width: 600px;
   position: absolute;
   bottom: 6.4rem;
   left: 11.5rem;
-  filter: brightness(0.8);
 }
 
 .subTitle2 {
   font-size: 1.2rem;
-  font-weight: 400;
-  font-family: 'Inter', sans-serif;
-  color: #D7F9FF;
+  font-weight: 600;
+  color: #EC1164;
   width: 100%;
   position: absolute;
   bottom: 4.4rem;
   left: 17rem;
-  filter: brightness(0.8);
-}
-
-.person {
-  background: #d9d9d9;
-  width: 233px;
-  height: 233px;
-  border-width: 3px;
-  border-style: solid;
-  border-color: #FFBA05;
-  position: absolute;
-  bottom: 75px;
-  right: 112px;
-  border-bottom-right-radius: 8px;
-  cursor: pointer;
+  filter: brightness(1.1);
 }
 
 .placeholder {

@@ -53,6 +53,17 @@ export default function Home() {
               />
             </div>
           </Link>
+          <Link href="/fiap">
+            <div className={styles.icon}>
+              <Image
+                src="/icons/fiap.png"
+                alt="13"
+                width={75}
+                height={75}
+                priority
+              />
+            </div>
+          </Link>
         </div>
         <footer className={styles.footer}>
           <a
