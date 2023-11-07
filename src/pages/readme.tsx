@@ -4,7 +4,7 @@ import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
 import styles from '../styles/Readme.module.css'
 import FileSaver from 'file-saver';
-import { comecoReadme, fimReadme, templateReadme } from "../data/readme";
+import { comecoReadme, exampleReadme, fimReadme, templateReadme } from "../data/readme";
 import Swal from "sweetalert2";
 
 const MDEditor = dynamic(
@@ -14,7 +14,7 @@ const MDEditor = dynamic(
 
 export default function Readme() {
   const [temporaryValue, setTemporaryValue] = useState<string>('');
-  const [value, setValue] = useState<string | undefined>('');
+  const [value, setValue] = useState<string | undefined>(exampleReadme);
 
   async function downloadReadme() {
     const file = new Blob([value!], { type: 'text/plain;charset=utf-8' });
